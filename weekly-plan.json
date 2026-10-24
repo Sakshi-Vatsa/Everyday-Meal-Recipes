@@ -1,5 +1,5 @@
 {
-  "title": "Weekly assignments — not yet specified by the dietician",
+  "title": "Weekly assignments — not specified yet",
   "days": {
     "Monday": [],
     "Tuesday": [],
@@ -9,5 +9,5 @@
     "Saturday": [],
     "Sunday": []
   },
-  "notes": "The supplied recommendations are an everyday schedule with choices, not a weekday-specific rotation. Do not populate without more instructions."
+  "notes": "No weekday-specific rotation was supplied. Do not assign recipes to days without instructions."
 }

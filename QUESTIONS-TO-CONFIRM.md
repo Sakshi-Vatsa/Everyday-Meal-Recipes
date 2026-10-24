@@ -1,4 +1,4 @@
-# Questions to confirm with the dietician
+# Questions to clarify
 
 - [ ] For Pongal, are 70 g rice and 100 g moong dal measured before or after cooking?
 - [ ] For rice + masoor dal lunch, are the two 100 g amounts dry or cooked?
