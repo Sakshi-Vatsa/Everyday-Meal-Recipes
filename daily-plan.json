@@ -1,0 +1,105 @@
+{
+  "title": "Everyday routine and meal choices",
+  "valid_from": null,
+  "valid_to": null,
+  "recurrence": "Everyday; options are alternatives within a meal slot, not all foods to eat together.",
+  "daily_habits": [
+    {
+      "title": "Raise leg(s) at 90 degrees on the bed",
+      "duration": "10–15 minutes",
+      "time": "Everyday; time not specified",
+      "notes": "Source uses “Raise leg at 90 degrees on the bed.” Number of legs and position details not specified.",
+      "source_text": "Raise leg at 90 degrees on the bed for 10-15 mins"
+    }
+  ],
+  "slots": [
+    {
+      "id": "morning-tea",
+      "title": "Morning tea",
+      "time": "Around 6:30 am",
+      "recipe_ids": [
+        "ginger-coriander-chia-ghee-drink"
+      ],
+      "notes": "After waking up",
+      "kind": "scheduled"
+    },
+    {
+      "id": "apple-after-morning-tea",
+      "title": "Apple after morning tea",
+      "time": "Within 30 minutes of morning tea",
+      "recipe_ids": [
+        "apple-cinnamon-honey-black-salt"
+      ],
+      "notes": "Second part of the morning routine",
+      "kind": "scheduled"
+    },
+    {
+      "id": "breakfast",
+      "title": "Breakfast",
+      "time": "Around 8:30 am",
+      "recipe_ids": [
+        "potato-quinoa-or-rice",
+        "pongal"
+      ],
+      "notes": "Choose ONE breakfast option. Black coffee is allowed; dietician suggested trying lemon juice in it. Quantity of lemon juice not specified.",
+      "kind": "choice"
+    },
+    {
+      "id": "mid-morning-drink",
+      "title": "Mid-morning drink",
+      "time": "10:30 am",
+      "recipe_ids": [
+        "coconut-water"
+      ],
+      "notes": "",
+      "kind": "scheduled"
+    },
+    {
+      "id": "lunch",
+      "title": "Lunch",
+      "time": "Time not specified",
+      "recipe_ids": [
+        "rice-masoor-dal-salad",
+        "pongal"
+      ],
+      "notes": "Choose ONE lunch option.",
+      "kind": "choice"
+    },
+    {
+      "id": "afternoon-tea",
+      "title": "Afternoon tea",
+      "time": "3:00 pm",
+      "recipe_ids": [
+        "jeera-saunf-water"
+      ],
+      "notes": "",
+      "kind": "scheduled"
+    },
+    {
+      "id": "dinner",
+      "title": "Dinner",
+      "time": "7:00 pm",
+      "recipe_ids": [
+        "moong-dal-chilla",
+        "rasam",
+        "pongal"
+      ],
+      "notes": "Choose ONE dinner option.",
+      "kind": "choice"
+    },
+    {
+      "id": "night-drink",
+      "title": "Night drink",
+      "time": "30 minutes before bed",
+      "recipe_ids": [
+        "ginger-coriander-chia-ghee-drink"
+      ],
+      "notes": "Repeat the morning warm drink.",
+      "kind": "scheduled"
+    }
+  ],
+  "other_notes": [
+    "The source describes an everyday routine, not weekday-specific meal assignments.",
+    "Measurements are transcribed as supplied; missing details are not inferred."
+  ]
+}
