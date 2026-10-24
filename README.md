@@ -1,30 +1,26 @@
-# Everyday Meal Recipes — working GitHub Pages website
+# Everyday Meal Recipes — refreshed website and app icon
 
-**Quickest fix:** Upload only `index.html` into the **root** of the
-[`Everyday-Meal-Recipes`](https://github.com/Sakshi-Vatsa/Everyday-Meal-Recipes) repository, replacing the old `index.html`.
-Commit to the branch serving GitHub Pages (usually `main`). The page is
-self-contained and no longer needs any files in `data/` to display recipes.
+This version removes all “Things to confirm” warnings from the website; retains the original leg-raise instruction without editorial commentary; corrects the Rasam ingredient to **1 teaspoon coriander**; and removes the incorrectly transcribed **2 teaspoons moong dal** from Rasam. The moong dal used in Pongal and chilla is unchanged.
 
-Website: https://sakshi-vatsa.github.io/Everyday-Meal-Recipes/
+The site contains 9 distinct recipes and drinks in 8 daily time slots. The data is bundled directly into `index.html`, so the page loads even when separate `data/` files are absent from your hosting setup. No personal records or Gmail links are included.
 
-## Contents
+## Publish on GitHub Pages
 
-- `index.html`: fully standalone mobile-friendly meal planner, with embedded data.
-- `data/recipes.json`: editable backup of 9 recipe/drink records, including original quantities and source wording.
-- `data/daily-plan.json`: editable backup of 8 daily time slots and the everyday habit.
-- `data/weekly-plan.json`: empty weekday assignments; no weekday-specific rotation was provided.
-- `QUESTIONS-TO-CONFIRM.md`: outstanding questions about unclear portions and terminology.
+Upload these **six** files to the root of https://github.com/Sakshi-Vatsa/Everyday-Meal-Recipes and commit:
 
-## Important for future edits
+- `index.html` (replaces previous file)
+- `apple-touch-icon.png`
+- `icon-192.png`
+- `icon-512.png`
+- `favicon-32.png`
+- `manifest.webmanifest`
 
-Updating the JSON backups on GitHub **alone** will not update the live page.
-The standalone `index.html` contains the same snapshot so it works without
-file-path errors. When you provide additional recommendations, regenerate the
-`index.html` snapshot from the updated JSON files, or request a new generated
-HTML file. Keep both in sync when changing recipes.
+You may optionally upload the `data/` folder as a separately editable backup and `icon-options/` for future icon changes. They are **not required** for the website to work.
 
-## Privacy
+## Icon choice
 
-The public site does not include Gmail links or message IDs, email addresses,
-health records, or details from any other meal planner. GitHub Pages is public,
-so don't commit private conversations or personal medical documents.
+The current default is **Option 8 — Terracotta steaming bowl** (warm rust-orange). It is deliberately different from Dr. Shikha's green plate-and-leaf icon. A sheet of 10 options is supplied as `icon-options.png`, and individual images in `icon-options/`. To switch, replace the four root PNG icon files with sizes exported from a different icon option. The manifest need not change as long as filenames stay the same.
+
+On iPhone, remove the previous home-screen shortcut, visit the refreshed GitHub Pages URL in Safari and add it to Home Screen again to update the icon. On Android, remove and reinstall the shortcut or PWA after the deployment.
+
+If you edit the JSON files, remember the page uses its *embedded* copy of the data. Editing `data/*.json` alone will not alter the live website.

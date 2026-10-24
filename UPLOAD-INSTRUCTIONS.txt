@@ -1,0 +1,13 @@
+EVERYDAY MEAL RECIPES — COMPLETE GITHUB UPLOAD
+
+Repository: https://github.com/Sakshi-Vatsa/Everyday-Meal-Recipes
+Website: https://sakshi-vatsa.github.io/Everyday-Meal-Recipes/
+
+1. Unzip the downloaded ZIP (double-click it in Finder on Mac).
+2. Open the extracted Everyday-Meal-Recipes-GitHub-Upload folder.
+3. In GitHub, open your repository > Add file > Upload files.
+4. Drag the CONTENTS of the extracted folder into the upload box, including its data and icon-options folders, NOT the ZIP or parent folder.
+5. At the bottom, choose Commit changes. Existing files should be replaced.
+6. After GitHub Pages finishes updating, refresh the website.
+
+The website runs from index.html; recipes are embedded, so it works even without the data folder. Option 8 (terracotta steaming bowl) is the active mobile app icon.

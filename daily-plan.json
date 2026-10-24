@@ -5,10 +5,9 @@
   "recurrence": "Everyday; options are alternatives within a meal slot, not all foods to eat together.",
   "daily_habits": [
     {
-      "title": "Raise leg(s) at 90 degrees on the bed",
+      "title": "Raise leg at 90 degrees on the bed",
       "duration": "10–15 minutes",
-      "time": "Everyday; time not specified",
-      "notes": "Source uses “Raise leg at 90 degrees on the bed.” Number of legs and position details not specified.",
+      "time": "Everyday",
       "source_text": "Raise leg at 90 degrees on the bed for 10-15 mins"
     }
   ],
@@ -41,7 +40,7 @@
         "potato-quinoa-or-rice",
         "pongal"
       ],
-      "notes": "Choose ONE breakfast option. Black coffee is allowed; the original recommendation suggests trying lemon juice in it. Quantity of lemon juice not specified.",
+      "notes": "Choose ONE breakfast option. Black coffee is allowed; the original recommendation suggests trying lemon juice in it.",
       "kind": "choice"
     },
     {
@@ -57,7 +56,7 @@
     {
       "id": "lunch",
       "title": "Lunch",
-      "time": "Time not specified",
+      "time": "Lunch",
       "recipe_ids": [
         "rice-masoor-dal-salad",
         "pongal"
@@ -98,8 +97,5 @@
       "kind": "scheduled"
     }
   ],
-  "other_notes": [
-    "The source describes an everyday routine, not weekday-specific meal assignments.",
-    "Measurements are transcribed as supplied; missing details are not inferred."
-  ]
+  "other_notes": []
 }
