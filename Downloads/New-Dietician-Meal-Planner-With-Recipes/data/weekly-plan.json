@@ -1,0 +1,13 @@
+{
+  "title": "Weekly assignments — not yet specified by the dietician",
+  "days": {
+    "Monday": [],
+    "Tuesday": [],
+    "Wednesday": [],
+    "Thursday": [],
+    "Friday": [],
+    "Saturday": [],
+    "Sunday": []
+  },
+  "notes": "The supplied recommendations are an everyday schedule with choices, not a weekday-specific rotation. Do not populate without more instructions."
+}

@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#255f65">
+<meta name="description" content="A private-data-free reference to daily meals and recipes from a new dietician.">
+<title>New Dietician Meal Planner</title>
+<style>
+:root{font-family:Inter,ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#153438;background:#f5f8f7;line-height:1.5}
+*{box-sizing:border-box}body{margin:0}button,input{font:inherit}button{cursor:pointer}
+.shell{width:min(1130px,calc(100% - 38px));margin-inline:auto}
+header{background:linear-gradient(125deg,#e0f3ea,#e9f2fa 90%);border-bottom:1px solid #d0e6dc;padding:19px 0 44px}
+.top{display:flex;justify-content:space-between;gap:18px;align-items:center}.brand{font-weight:800;font-size:19px;letter-spacing:-.035em}.brand em{font-style:normal;color:#248182}.topnote{border-radius:25px;border:1px solid #bfdcd4;background:#fff7;padding:7px 13px;color:#477372;font-size:12px}
+h1{font-size:clamp(40px,5vw,65px);letter-spacing:-.055em;line-height:1.08;margin:55px 0 17px;max-width:825px}h1 em{font-style:normal;color:#168079}header p{font-size:16px;line-height:1.7;color:#496b6c;max-width:790px}
+.stats{display:flex;gap:10px;flex-wrap:wrap;margin-top:22px}.stat{border:1px solid #cce1db;border-radius:12px;padding:11px 15px;background:#ffffffb8;font-size:13px;color:#4c6b6b}.stat b{font-size:18px;color:#1d5556}
+main{padding:29px 0 75px}.tabs{display:flex;gap:10px;margin-bottom:24px}.tabs button,.filters button{border:1px solid #cbdfdb;border-radius:999px;padding:11px 17px;background:white;color:#2c5659}.tabs button.active,.filters button.active{background:#22646a;color:white;border-color:#22646a}
+h2{font-size:clamp(26px,3vw,36px);line-height:1.2;letter-spacing:-.04em;margin:0 0 9px}section>p.intro{color:#5d7777;margin:0 0 23px;max-width:780px}
+.habit{display:flex;gap:15px;padding:21px;border:1px solid #d8dfc8;background:#f3f3e8;border-radius:18px;margin:0 0 25px;align-items:flex-start}.habit .symbol{font-size:24px}.habit h3{margin:0;font-size:16px}.habit p{margin:7px 0 0;color:#5d6f5c;font-size:14px}
+.timeline{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:17px}.card{min-width:0;background:white;border:1px solid #dae8e3;border-radius:19px;padding:21px;box-shadow:0 4px 25px #123e3a09}
+.slot-head{display:flex;justify-content:space-between;align-items:flex-start;gap:14px}.slot-head h3{font-size:22px;letter-spacing:-.045em;margin:0 0 5px}.time{color:#337d77;font-weight:750;font-size:13px;white-space:normal}.type{display:inline-flex;border-radius:6px;background:#eaf4f0;color:#35675e;font-size:11px;padding:4px 7px;font-weight:700;margin:8px 0}
+.option{padding-top:15px;border-top:1px solid #e9efeb;margin-top:14px}.option:first-of-type{border-top:0}.option h4{margin:0 0 5px;font-size:16px}.option p{color:#526d6b;font-size:13px;margin:5px 0}.option .portion{font-size:14px;color:#344f4f;line-height:1.65}.slotnote{background:#f2f8f8;border-radius:11px;padding:10px 12px;color:#466767;font-size:13px;line-height:1.65;margin-top:14px}
+.note{padding:15px 18px;background:#edf3f5;border:1px solid #d5e5e8;border-radius:14px;margin-top:23px;color:#456466;font-size:13px;line-height:1.65}
+.controls{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:14px}.controls input{background:white;border:1px solid #c6d9d3;border-radius:12px;padding:12px 16px;flex:1;min-width:220px;max-width:530px}
+.filters{display:flex;flex-wrap:wrap;gap:7px;margin-bottom:16px}.filters button{padding:8px 12px;font-size:12px}.results{font-size:13px;color:#648080;margin-bottom:15px}.recipes{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px}.badge{display:inline-block;border-radius:5px;color:#17736e;background:#eaf6f3;padding:4px 8px;font-size:11px;font-weight:700}.recipe h3{font-size:22px;letter-spacing:-.04em;margin:10px 0}.detail{font-size:14px;line-height:1.7;color:#3f5959;overflow-wrap:anywhere}.detail strong{color:#224649}
+ul.ingredient,ol.steps{padding-left:22px;margin:9px 0 17px;font-size:14px;color:#3f5959;line-height:1.7}.small{font-size:13px;color:#547372}.flags{margin-top:16px;padding:12px 13px;border-radius:10px;background:#fff9ed;border:1px solid #eee4cd}.flags h4{margin:0 0 8px;font-size:13px;color:#7a603c}.flags ul{margin:0;padding-left:19px;font-size:12px;color:#735d41;line-height:1.65}.source{border-top:1px solid #e8efec;margin-top:15px;padding-top:12px;font-size:12px;color:#69817f}.empty{grid-column:1/-1;padding:35px;text-align:center;color:#6b8581}
+footer{border-top:1px solid #dce9e5;color:#607978;padding:24px 0 38px;font-size:12px}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #8bcfc6;outline-offset:3px}
+@media(max-width:720px){.timeline,.recipes{grid-template-columns:1fr}.shell{width:calc(100% - 28px)}.topnote{display:none}h1{margin-top:43px}.card{padding:18px}.stats{gap:8px}}
+</style>
+</head>
+<body>
+<header><div class="shell"><div class="top"><div class="brand">🍽️ New Dietician <em>Meal Planner</em></div><div class="topnote">Daily routine · exact original quantities</div></div>
+<h1>Your daily plan, <em>all in one place.</em></h1><p>Explore the everyday schedule and meal choices recommended by your new dietician. Each recipe appears once in the library, even when it can be eaten at more than one time.</p>
+<div class="stats"><div class="stat"><b id="recipe-count">—</b> distinct recipes and drinks</div><div class="stat"><b id="slot-count">—</b> daily time slots</div><div class="stat">Separate from the Dr. Shikha archive</div></div></div></header>
+<main class="shell"><nav class="tabs" aria-label="Views"><button id="daily-tab" class="active" type="button" aria-pressed="true">Daily schedule</button><button id="recipes-tab" type="button" aria-pressed="false">Explore recipes</button></nav>
+<section id="daily-view"><h2>Everyday routine</h2><p class="intro">Times are kept exactly as provided. Where a meal has multiple recipes, choose one option rather than all of them.</p><div id="habit"></div><div class="timeline" id="timeline"><div class="empty">Loading the daily plan…</div></div><aside class="note">This is a reference to the dietician's recommendations, not a new diet prescription. Undefined weights, spoon sizes, and timing details are flagged instead of being estimated. No weekday rotation has been specified yet.</aside></section>
+<section id="recipes-view" hidden><h2>Recipe library</h2><p class="intro">Search an ingredient or choose a meal time. The same Pongal recipe appears once here but is available in three meal slots.</p><div class="controls"><input type="search" id="search" aria-label="Search recipes and ingredients" placeholder="Search pongal, potato, moong dal, ghee…"></div><div class="filters" id="filters"></div><p class="results" id="results" aria-live="polite"></p><div class="recipes" id="recipe-cards"></div></section>
+</main><footer class="shell">A separate dietician recipe reference. No email accounts, personal identifiers, medical history or data from the older meal-planner site. These notes are historical/received recommendations; confirm anything marked for clarification with your dietician.</footer>
+<script>
+'use strict';
+const $=s=>document.getElementById(s);
+const esc=x=>String(x??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const state={recipes:[],plan:null,filter:'All',query:''};
+const read=async path=>{const response=await fetch(path,{cache:'no-cache'});if(!response.ok)throw Error('Could not load '+path);return response.json()};
+const recipeMap=()=>new Map(state.recipes.map(r=>[r.id,r]));
+const list=(items,ordered=false)=>items?.length?`<${ordered?'ol':'ul'} class="${ordered?'steps':'ingredient'}">${items.map(x=>`<li>${esc(x)}</li>`).join('')}</${ordered?'ol':'ul'}>`:'';
+function dailyRender(){const plan=state.plan||{};const recipes=recipeMap();const habit=plan.daily_habits||[];
+ $('habit').innerHTML=habit.map(h=>`<article class="habit"><div class="symbol" aria-hidden="true">🧘</div><div><h3>${esc(h.title)}</h3><p><b>${esc(h.duration)}</b> · ${esc(h.time)}</p>${h.notes?`<p>${esc(h.notes)}</p>`:''}</div></article>`).join('');
+ $('timeline').innerHTML=(plan.slots||[]).map(s=>`<article class="card"><div class="slot-head"><div><h3>${esc(s.title)}</h3><div class="time">${esc(s.time)}</div></div></div>${s.kind==='choice'?'<div class="type">CHOOSE ONE OPTION</div>':'<div class="type">DAILY</div>'}${(s.recipe_ids||[]).map((id,i)=>{const r=recipes.get(id);return r?`<div class="option"><h4>${s.kind==='choice'?'<span class="small">Option '+(i+1)+'</span> · ':''}${esc(r.title)}</h4><div class="portion">${esc(r.portion)}</div>${r.alternatives?`<p><b>Alternative:</b> ${esc(r.alternatives)}</p>`:''}</div>`:''}).join('')}${s.notes?`<div class="slotnote">${esc(s.notes)}</div>`:''}</article>`).join('');}
+function categories(){return ['All',...(state.plan?.slots||[]).map(s=>s.title)]}
+function filtersRender(){const all=categories();$('filters').innerHTML=all.map(c=>`<button type="button" data-value="${esc(c)}" aria-pressed="${state.filter===c}" class="${state.filter===c?'active':''}">${esc(c)}</button>`).join('');$('filters').querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{state.filter=b.dataset.value;filtersRender();recipesRender()}));}
+function recipeCard(r){let slot=(r.slots||[]).map(x=>`<span class="badge">${esc(x)}</span>`).join(' ');const detail=x=>x?`<p class="detail">${esc(x)}</p>`:'';return `<article class="card recipe"><div>${slot}</div><h3>${esc(r.title)}</h3><div class="detail"><strong>Recommended amount:</strong> ${esc(r.portion)}</div><h4>Ingredients</h4>${list(r.ingredients)}${r.instructions?.length?'<h4>Instructions</h4>'+list(r.instructions,true):''}${r.alternatives?`<div class="detail"><strong>Alternatives:</strong> ${esc(r.alternatives)}</div>`:''}${r.accompaniments?`<div class="detail"><strong>Served with:</strong> ${esc(r.accompaniments)}</div>`:''}${r.notes?detail(r.notes):''}${r.needs_confirmation?.length?`<div class="flags"><h4>To confirm with the dietician</h4>${list(r.needs_confirmation)}</div>`:''}<div class="source">No video link supplied yet · Original wording retained in the downloadable JSON data</div></article>`}
+function recipesRender(){let all=state.recipes.filter(r=>(state.filter==='All'||(r.slots||[]).includes(state.filter))&&(!state.query||[r.title,r.portion,r.alternatives,r.accompaniments,r.notes,r.source_text,...(r.ingredients||[]),...(r.instructions||[])].join(' ').toLowerCase().includes(state.query)));$('results').textContent=`${all.length} of ${state.recipes.length} recipes and drinks`;$('recipe-cards').innerHTML=all.length?all.map(recipeCard).join(''):'<div class="empty">No matching recipes. Try a different search or meal time.</div>'}
+function toggle(which){const daily=which==='daily';$('daily-view').hidden=!daily;$('recipes-view').hidden=daily;for(const id of ['daily','recipes']){const b=$(id+'-tab');b.classList.toggle('active',id===which);b.setAttribute('aria-pressed',String(id===which))}}
+$('daily-tab').addEventListener('click',()=>toggle('daily'));
+$('recipes-tab').addEventListener('click',()=>toggle('recipes'));
+$('search').addEventListener('input',e=>{state.query=e.target.value.trim().toLowerCase();recipesRender()});
+(async()=>{try{const [rs,pl]=await Promise.all([read('./data/recipes.json'),read('./data/daily-plan.json')]);state.recipes=rs.recipes||[];state.plan=pl;$('recipe-count').textContent=state.recipes.length;$('slot-count').textContent=pl.slots.length;dailyRender();filtersRender();recipesRender()}catch(error){$('timeline').innerHTML=`<p role="alert">The meal data could not load. Confirm both JSON files were uploaded to the data folder. ${esc(error.message)}</p>`;console.error(error)}})();
+</script>
+</body></html>
